@@ -58,27 +58,28 @@ Wait for user confirmation before executing.
 
 ### Step 3: Set Up Isolation
 
-**Before executing anything, ask the user:**
+**Before executing anything, recommend an isolation strategy and ask the user.**
 
-    You're on <current-branch>. Want to create a new branch for this work?
+Pick the best default based on scope:
+- Multiple phases or large feature → recommend worktree
+- Single phase or small scope → recommend branch
+- Already on a feature branch → recommend staying
 
-    1. New branch: feature/<feature-name>
-    2. New worktree: ../<repo-name>-<feature-name>
-    3. Stay on <current-branch>
+Present it as:
 
-    Which option?
+    You're on <current-branch>.
+
+    1. <recommended option> (recommended)
+    2. Stay on <current-branch>
+    3. Something else
+
+Examples:
+- `1. New branch: feature/<feature-name> (recommended)`
+- `1. New worktree: ../<repo-name>-<feature-name> (recommended)`
 
 **Do not proceed to Step 4 until the user answers.**
 
-If they choose a branch:
-```
-git checkout -b feature/<feature-name>
-```
-
-If they choose a worktree:
-```
-git worktree add ../<repo-name>-<feature-name> -b feature/<feature-name>
-```
+If they pick option 3, ask what they'd prefer (different branch name, worktree, etc.).
 
 If they choose to stay on the current branch, proceed — but note this in the plan summary so `/lo:ship` knows there's no feature branch to PR from.
 
