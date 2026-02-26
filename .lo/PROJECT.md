@@ -1,30 +1,23 @@
 ---
-title: "Project: Agent Development Brief"
-description: "A framework replacing traditional PRDs with collaborative document structures for AI-human development teams."
-status: "explore"
-classification: "public-open"
+title: "Agent Development Brief"
+description: "A collaborative framework replacing traditional PRDs for AI-human development teams — minimal upfront spec, living documentation, outcome-focused."
+status: "open"
+classification: "public"
 topics:
-  - ai-collaboration
+  - agent-collaboration
   - developer-tooling
-  - documentation-frameworks
-repo: "https://github.com/mhofwell/agent-development-brief.git"
-stack:
-  - Markdown
-infrastructure: []
+  - documentation
+repo: "https://github.com/looselyorganized/agent-development-brief"
 agents:
   - name: "claude-code"
     role: "AI coding agent (Claude Code)"
 ---
 
-A framework that replaces traditional PRDs with Agent Development Briefs — a collaborative document structure designed for AI-human development teams that lets implementation drive specification refinement.
+Agent Development Briefs replace traditional Product Requirements Documents with a collaborative framework designed for AI-human development teams. Instead of predicting everything upfront, ADBs define the problem space and let implementation drive specification refinement.
 
-## Capabilities
+## Core Documents
 
-- **Template System** — Core document templates (main, product-requirements, agent-operating-guidelines, decision-log) with optional supporting docs
-- **Decision Authority Framework** — Standardized authority levels from Human-Decides to Agent-Autonomous for scoping agent decision-making
-- **Living Documentation** — Documents evolve through implementation; specs reflect what was built, not what was predicted
-- **Example Projects** — Complete ADB implementations (CatGram) as reference patterns
-
-## Architecture
-
-Markdown template files. Core templates in `/agent-development-brief/`, examples in `/examples/`. No runtime — pure documentation framework consumed by AI agents at session start.
+- **main.md** — Orchestrates the review process and sets expectations
+- **product-requirements.md** — Problem definition, user stories, success metrics, scope boundaries
+- **agent-operating-guidelines.md** — Decision-making framework, development philosophy, authority levels
+- **decision-log.md** — Timestamped record of all architectural and product decisions
