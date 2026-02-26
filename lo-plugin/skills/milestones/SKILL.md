@@ -25,7 +25,7 @@ Groups commits under thematic milestones to keep `.lorf/stream/` current. The st
 
 ## Critical Rules
 
-- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:init` first.
+- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
 - ALWAYS read existing stream entries before generating new ones — never create duplicates.
 - Filename convention: `YYYY-MM-DD-{slug}.md` — date must match frontmatter `date` field.
 - Multiple entries on the same date are fine — use distinct slugs.
@@ -39,7 +39,7 @@ Groups commits under thematic milestones to keep `.lorf/stream/` current. The st
 
 Check that `.lorf/stream/` exists. If not:
 ```
-No .lorf/ directory found. Run /lo:init first to set up the project structure.
+No .lorf/ directory found. Run /lo:new first to set up the project structure.
 ```
 Stop here.
 

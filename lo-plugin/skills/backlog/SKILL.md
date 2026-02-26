@@ -15,7 +15,7 @@ Manages the project backlog at `.lorf/BACKLOG.md`. Features and tasks live here 
 
 ## Critical Rules
 
-- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:init` first.
+- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
 - If `.lorf/BACKLOG.md` doesn't exist, create it with the default template before proceeding.
 - ALWAYS read the current backlog before making changes — never overwrite blindly.
 - Update the `updated:` date in frontmatter whenever the file is modified.

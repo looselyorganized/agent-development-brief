@@ -16,7 +16,7 @@ Captures reusable knowledge in `.lorf/solutions/`. Solutions compound over time 
 
 ## Critical Rules
 
-- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:init` first.
+- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
 - If `.lorf/solutions/` doesn't exist, create it.
 - Solutions are about **reusable knowledge**, not project-specific notes. If it's only relevant to this one instance, suggest `.lorf/notes/` instead.
 - Filename convention: `<topic-slug>.md` (kebab-case, 2-5 words)

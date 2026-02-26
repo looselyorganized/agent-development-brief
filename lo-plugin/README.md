@@ -10,7 +10,7 @@ Claude Code plugin for managing work in Loosely Organized projects.
 | work | `/lo:work` | Execute plans with branch/worktree + parallel agents |
 | solution | `/lo:solution` | Capture reusable knowledge |
 | ship | `/lo:ship` | Test → simplify → security → commit → push → PR |
-| init | `/lo:init` | Scaffold .lorf/ directory |
+| new | `/lo:new` | Scaffold .lorf/ directory |
 | milestones | `/lo:milestones` | Update .lorf/stream/ with milestones |
 | hypothesis | `/lo:hypothesis` | Create testable hypotheses |
 | research | `/lo:research` | Write structured research articles |

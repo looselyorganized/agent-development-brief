@@ -15,7 +15,7 @@ Executes plans from `.lorf/work/` feature directories. Handles branching, parall
 
 ## Critical Rules
 
-- `.lorf/work/` MUST exist. If it doesn't, tell the user to run `/lo:init` first.
+- `.lorf/work/` MUST exist. If it doesn't, tell the user to run `/lo:new` first.
 - NEVER ship code. This skill executes plans. `/lo:ship` handles the quality pipeline.
 - ALWAYS create a branch or worktree before making changes. Never work directly on main.
 - Be transparent about what's running in parallel and why.

@@ -20,7 +20,7 @@ Walks the user through creating a structured research article for `.lorf/researc
 
 ## Critical Rules
 
-- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:init` first.
+- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
 - All files are plain Markdown with YAML frontmatter. No MDX.
 - Filename convention: `{slug}.md` (kebab-case, descriptive)
 - Research articles in `.lorf/research/` are project-scoped. They are accessed through the parent project's page — there is no standalone `/research` route on the website.
@@ -83,7 +83,7 @@ Image placement guidelines:
 
 Check that `.lorf/research/` exists. If not:
 ```
-No .lorf/ directory found. Run /lo:init first to set up the project structure.
+No .lorf/ directory found. Run /lo:new first to set up the project structure.
 ```
 Stop here.
 

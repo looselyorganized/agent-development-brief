@@ -1,6 +1,6 @@
 ---
-name: init
-description: Scaffolds the .lorf/ directory structure for a new LORF project. Creates project.md with full frontmatter template, subdirectories (hypotheses, stream, notes, research, work, solutions), .gitkeep files, and an initial "project started" stream entry. Use when user says "init lorf", "create lorf", "set up lorf", "scaffold lorf", "new lorf project", "add lorf to this repo", or "/lo:init".
+name: new
+description: Scaffolds the .lorf/ directory structure for a new LORF project. Creates project.md with full frontmatter template, subdirectories (hypotheses, stream, notes, research, work, solutions), .gitkeep files, and an initial "project started" stream entry. Use when user says "new lorf", "create lorf", "set up lorf", "scaffold lorf", "new lorf project", "add lorf to this repo", "new project", or "/lo:new".
 metadata:
   version: 2.0.0
   author: LORF
@@ -8,15 +8,15 @@ metadata:
   tags: [lorf, project-setup, scaffolding, convention]
 ---
 
-# LORF Project Init
+# LORF New Project
 
 Scaffolds the `.lorf/` directory convention in the current repository root.
 
 ## When to Use
 
 - User wants to add LORF project tracking to a repo
-- User invokes `/lo:init`
-- User says "init lorf", "set up lorf", "scaffold lorf", "new lorf project"
+- User invokes `/lo:new`
+- User says "new lorf", "set up lorf", "scaffold lorf", "new lorf project", "new project"
 
 ## Critical Rules
 

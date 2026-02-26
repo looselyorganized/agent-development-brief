@@ -20,7 +20,7 @@ Walks the user through creating a properly formatted hypothesis file for `.lorf/
 
 ## Critical Rules
 
-- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:init` first.
+- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
 - Hypothesis IDs are sequential within the project: `h001`, `h002`, etc.
 - Filename convention: `h{NNN}-{slug}.md` — numeric prefix for ordering, slug for readability.
 - The `statement` field must be a **testable claim** — something that can be validated or invalidated.
@@ -33,7 +33,7 @@ Walks the user through creating a properly formatted hypothesis file for `.lorf/
 
 Check that `.lorf/hypotheses/` exists. If not:
 ```
-No .lorf/ directory found. Run /lo:init first to set up the project structure.
+No .lorf/ directory found. Run /lo:new first to set up the project structure.
 ```
 Stop here.
 
