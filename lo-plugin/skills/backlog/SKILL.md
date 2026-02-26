@@ -1,11 +1,11 @@
 ---
 name: backlog
-description: Manages the LORF project backlog in .lorf/BACKLOG.md. Supports viewing, adding, updating, and starting features and tasks. Use when user says "backlog", "add task", "add feature", "update backlog", "what should I work on", "what's next", "start a feature", "view backlog", "/backlog", "/task", or "/feature".
+description: Manages the LO project backlog in .lo/BACKLOG.md. Supports viewing, adding, updating, and starting features and tasks. Use when user says "backlog", "add task", "add feature", "update backlog", "what should I work on", "what's next", "start a feature", "view backlog", "/backlog", "/task", or "/feature".
 ---
 
-# LORF Backlog Manager
+# LO Backlog Manager
 
-Manages the project backlog at `.lorf/BACKLOG.md`. Features and tasks live here until they graduate into active work.
+Manages the project backlog at `.lo/BACKLOG.md`. Features and tasks live here until they graduate into active work.
 
 ## When to Use
 
@@ -15,11 +15,11 @@ Manages the project backlog at `.lorf/BACKLOG.md`. Features and tasks live here 
 
 ## Critical Rules
 
-- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
-- If `.lorf/BACKLOG.md` doesn't exist, create it with the default template before proceeding.
+- `.lo/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
+- If `.lo/BACKLOG.md` doesn't exist, create it with the default template before proceeding.
 - ALWAYS read the current backlog before making changes — never overwrite blindly.
 - Update the `updated:` date in frontmatter whenever the file is modified.
-- Feature status values: `backlog` | `active -> .lorf/work/<name>/` | `done -> YYYY-MM-DD`
+- Feature status values: `backlog` | `active -> .lo/work/<name>/` | `done -> YYYY-MM-DD`
 - Tasks are checkboxes: `- [ ]` open, `- [x] ~~text~~ -> YYYY-MM-DD` done.
 - All files are plain Markdown with YAML frontmatter. No MDX.
 
@@ -31,13 +31,13 @@ Detect mode from arguments. `/lo:backlog` with no args → view. `/lo:backlog vi
 
 Arguments: none, or `view`
 
-Read `.lorf/BACKLOG.md` and display a summary:
+Read `.lo/BACKLOG.md` and display a summary:
 
     Backlog (updated YYYY-MM-DD):
 
     Features:
       [backlog] Feature Name — short description
-      [active]  Feature Name -> .lorf/work/feature-name/
+      [active]  Feature Name -> .lo/work/feature-name/
       [done]    Feature Name -> completed YYYY-MM-DD
 
     Tasks:
@@ -76,21 +76,28 @@ Arguments: `feature "name"`
 
 Arguments: `start "name"`
 
-Graduates a feature from backlog to active work.
+Graduates a feature from backlog to active work, creates a plan, then offers to execute it.
 
 1. Read current BACKLOG.md
 2. Find the matching feature (fuzzy match on name)
 3. If not found, show available backlog features and ask user to choose
 4. Derive directory name: kebab-case from feature name
-5. Create `.lorf/work/<feature-name>/` directory
-6. Update the feature's status line: `Status: active -> .lorf/work/<feature-name>/`
+5. Create `.lo/work/<feature-name>/` directory
+6. Update the feature's status line: `Status: active -> .lo/work/<feature-name>/`
 7. Update `updated:` date
-8. Confirm and bridge:
+8. Confirm:
 
         Feature started: "<name>"
-        Work directory: .lorf/work/<feature-name>/
+        Work directory: .lo/work/<feature-name>/
 
-        No plans exist yet. Ready to brainstorm the design?
+9. **Brainstorm:** Invoke `superpowers:brainstorming` to explore the design with the user
+10. **Plan:** Invoke `superpowers:writing-plans` (or enter plan mode) to create a structured implementation plan
+11. **Save plan** to `.lo/work/<feature-name>/001-<phase-slug>.md` using the plan file format from `/lo:work`
+12. **Bridge to execution:**
+
+        Plan saved: .lo/work/<feature-name>/001-<phase-slug>.md
+
+        Ready to start executing? Type /lo:work to begin.
 
 ### Mode 5: Update Item
 
