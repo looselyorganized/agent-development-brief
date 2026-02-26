@@ -6,7 +6,7 @@ updated: 2026-02-25
 
 ### Changing LORF to LO
 Rename `.lorf/` directory to `.lo/`, update all skill references, plugin naming, and documentation to use "lo" instead of "lorf" throughout all projects in `projects/looselyorganized/*`.
-Status: active -> .lo/work/changing-lorf-to-lo/
+Status: done -> 2026-02-25
 
 ## Tasks
 
