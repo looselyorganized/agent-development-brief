@@ -1,39 +1,39 @@
 ---
 name: new
-description: Scaffolds the .lorf/ directory structure for a new LORF project. Creates project.md with full frontmatter template, subdirectories (hypotheses, stream, notes, research, work, solutions), .gitkeep files, and an initial "project started" stream entry. Use when user says "new lorf", "create lorf", "set up lorf", "scaffold lorf", "new lorf project", "add lorf to this repo", "new project", or "/lo:new".
+description: Scaffolds the .lo/ directory structure for a new LO project. Creates PROJECT.md with full frontmatter template, subdirectories (hypotheses, stream, notes, research, work, solutions), .gitkeep files, and an initial "project started" stream entry. Use when user says "new lo", "create lo", "set up lo", "scaffold lo", "new lo project", "add lo to this repo", "new project", or "/lo:new".
 metadata:
   version: 2.0.0
-  author: LORF
+  author: LO
   category: project-scaffolding
-  tags: [lorf, project-setup, scaffolding, convention]
+  tags: [lo, project-setup, scaffolding, convention]
 ---
 
-# LORF New Project
+# LO New Project
 
-Scaffolds the `.lorf/` directory convention in the current repository root.
+Scaffolds the `.lo/` directory convention in the current repository root.
 
 ## When to Use
 
-- User wants to add LORF project tracking to a repo
+- User wants to add LO project tracking to a repo
 - User invokes `/lo:new`
-- User says "new lorf", "set up lorf", "scaffold lorf", "new lorf project", "new project"
+- User says "new lo", "set up lo", "scaffold lo", "new lo project", "new project"
 
 ## Critical Rules
 
-- NEVER overwrite an existing `.lorf/` directory. If one exists, warn the user and stop.
+- NEVER overwrite an existing `.lo/` directory. If one exists, warn the user and stop.
 - All files use plain Markdown with YAML frontmatter. No MDX.
-- `project.md` is the only content file created at init. `BACKLOG.md` is created by `/lo:backlog` on first use.
+- `PROJECT.md` is the only content file created at init. `BACKLOG.md` is created by `/lo:backlog` on first use.
 - Use today's date (YYYY-MM-DD) for the initial stream entry.
 
 ## Workflow
 
-### Step 1: Check for Existing .lorf/
+### Step 1: Check for Existing .lo/
 
-Before creating anything, check if `.lorf/` already exists at the repo root.
+Before creating anything, check if `.lo/` already exists at the repo root.
 
 If it exists:
 ```
-A .lorf/ directory already exists in this repo.
+A .lo/ directory already exists in this repo.
 To avoid overwriting existing project content, I won't re-initialize.
 ```
 Stop here.
@@ -138,12 +138,12 @@ Present all auto-filled content to the user for review/editing before writing. M
 ### Step 3: Create Directory Structure
 
 ```bash
-mkdir -p .lorf/hypotheses .lorf/stream .lorf/notes .lorf/research .lorf/work .lorf/solutions
+mkdir -p .lo/hypotheses .lo/stream .lo/notes .lo/research .lo/work .lo/solutions
 ```
 
-### Step 4: Write project.md
+### Step 4: Write PROJECT.md
 
-Write `.lorf/project.md` using the scanned values from Step 2.
+Write `.lo/PROJECT.md` using the scanned values from Step 2.
 
 - Required fields get placeholder values (user edits after)
 - `repo`, `stack`, `infrastructure`, `agents` get pre-populated from scan results (uncommented if detected, commented if not)
@@ -197,7 +197,7 @@ Any other `## ` headings render as generic prose sections. All sections are opti
 
 ### Step 5: Write Initial Stream Entry
 
-Write `.lorf/stream/YYYY-MM-DD-project-started.md` using today's date:
+Write `.lo/stream/YYYY-MM-DD-project-started.md` using today's date:
 
 ```markdown
 ---
@@ -206,26 +206,26 @@ date: "YYYY-MM-DD"
 title: "Project initialized"
 ---
 
-LORF project structure created. Project tracking begins.
+LO project structure created. Project tracking begins.
 ```
 
 ### Step 6: Write .gitkeep Files
 
 Write empty `.gitkeep` files in directories that start empty:
-- `.lorf/hypotheses/.gitkeep`
-- `.lorf/notes/.gitkeep`
-- `.lorf/research/.gitkeep`
-- `.lorf/work/.gitkeep`
-- `.lorf/solutions/.gitkeep`
+- `.lo/hypotheses/.gitkeep`
+- `.lo/notes/.gitkeep`
+- `.lo/research/.gitkeep`
+- `.lo/work/.gitkeep`
+- `.lo/solutions/.gitkeep`
 
 ### Step 7: Confirm
 
 Show the user what was created and what was auto-detected:
 
 ```
-.lorf/ directory created:
+.lo/ directory created:
 
-  project.md
+  PROJECT.md
     status: [user selection]
     classification: [user selection]
     repo: [detected or placeholder]
@@ -242,7 +242,7 @@ Show the user what was created and what was auto-detected:
   solutions/
 
 Next steps:
-  1. Review .lorf/project.md — verify auto-filled content, fill any [TODO] placeholders
+  1. Review .lo/PROJECT.md — verify auto-filled content, fill any [TODO] placeholders
   2. Use /lo:backlog to set up your backlog
   3. Use /lo:hypothesis to log your first hypothesis
   4. Use /lo:research to start a research doc
@@ -251,8 +251,8 @@ Next steps:
 ## Directory Structure Reference
 
 ```
-.lorf/
-├── project.md
+.lo/
+├── PROJECT.md
 ├── hypotheses/
 ├── stream/
 ├── notes/
@@ -264,15 +264,15 @@ Next steps:
 ## Validation
 
 Before finishing, verify:
-- [ ] `.lorf/project.md` exists with valid YAML frontmatter
+- [ ] `.lo/PROJECT.md` exists with valid YAML frontmatter
 - [ ] All subdirectories exist
 - [ ] Stream entry has today's date in both filename and frontmatter
 - [ ] `.gitkeep` files in hypotheses/, notes/, research/, work/, solutions/
 - [ ] No files outside the expected structure
-- [ ] `.lorf/work/` directory exists
-- [ ] `.lorf/solutions/` directory exists
-- [ ] `.lorf/work/.gitkeep` exists
-- [ ] `.lorf/solutions/.gitkeep` exists
+- [ ] `.lo/work/` directory exists
+- [ ] `.lo/solutions/` directory exists
+- [ ] `.lo/work/.gitkeep` exists
+- [ ] `.lo/solutions/.gitkeep` exists
 
 ## Frontmatter Reference
 

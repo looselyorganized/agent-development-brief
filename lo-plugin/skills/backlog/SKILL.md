@@ -158,6 +158,6 @@ If BACKLOG.md doesn't exist, create it:
 
     ## Tasks
 
-    - [ ] Review project.md and fill any TODO placeholders
+    - [ ] Review PROJECT.md and fill any TODO placeholders
 
 Use today's date for the `updated` field.

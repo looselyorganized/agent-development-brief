@@ -1,16 +1,16 @@
 ---
 name: hypothesis
-description: Generates a properly formatted LORF hypothesis file with correct frontmatter and writes it to .lorf/hypotheses/. Takes file(s) as input (notes, code, research) and walks the user through distilling a testable hypothesis statement. Use when user says "new hypothesis", "add hypothesis", "create hypothesis", "log a hypothesis", "test this idea", or "/lo:hypothesis".
+description: Generates a properly formatted LO hypothesis file with correct frontmatter and writes it to .lo/hypotheses/. Takes file(s) as input (notes, code, research) and walks the user through distilling a testable hypothesis statement. Use when user says "new hypothesis", "add hypothesis", "create hypothesis", "log a hypothesis", "test this idea", or "/lo:hypothesis".
 metadata:
   version: 1.0.0
-  author: LORF
+  author: LO
   category: project-documentation
-  tags: [lorf, hypothesis, research, scientific-method]
+  tags: [lo, hypothesis, research, scientific-method]
 ---
 
-# LORF Hypothesis Generator
+# LO Hypothesis Generator
 
-Walks the user through creating a properly formatted hypothesis file for `.lorf/hypotheses/`.
+Walks the user through creating a properly formatted hypothesis file for `.lo/hypotheses/`.
 
 ## When to Use
 
@@ -20,7 +20,7 @@ Walks the user through creating a properly formatted hypothesis file for `.lorf/
 
 ## Critical Rules
 
-- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
+- `.lo/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
 - Hypothesis IDs are sequential within the project: `h001`, `h002`, etc.
 - Filename convention: `h{NNN}-{slug}.md` — numeric prefix for ordering, slug for readability.
 - The `statement` field must be a **testable claim** — something that can be validated or invalidated.
@@ -29,11 +29,11 @@ Walks the user through creating a properly formatted hypothesis file for `.lorf/
 
 ## Workflow
 
-### Step 1: Verify .lorf/ Exists
+### Step 1: Verify .lo/ Exists
 
-Check that `.lorf/hypotheses/` exists. If not:
+Check that `.lo/hypotheses/` exists. If not:
 ```
-No .lorf/ directory found. Run /lo:new first to set up the project structure.
+No .lo/ directory found. Run /lo:new first to set up the project structure.
 ```
 Stop here.
 
@@ -51,7 +51,7 @@ What observation, assumption, or idea do you want to formalize as a hypothesis?
 
 ### Step 3: Determine Next Hypothesis ID
 
-Scan `.lorf/hypotheses/` for existing files matching the pattern `h{NNN}-*.md`.
+Scan `.lo/hypotheses/` for existing files matching the pattern `h{NNN}-*.md`.
 
 - Extract the highest existing number
 - Next ID = highest + 1, zero-padded to 3 digits
@@ -98,9 +98,9 @@ Default status is `proposed`. Ask the user if they've already started testing:
 
 ### Step 7: Write the File
 
-Write to `.lorf/hypotheses/h{NNN}-{slug}.md`.
+Write to `.lo/hypotheses/h{NNN}-{slug}.md`.
 
-To determine `content_slug`, read `.lorf/project.md` and extract the project's slug from its `title` field (the part after "Project: ", kebab-cased). This links the hypothesis to the parent project.
+To determine `content_slug`, read `.lo/PROJECT.md` and extract the project's slug from its `title` field (the part after "Project: ", kebab-cased). This links the hypothesis to the parent project.
 
 If `revisesId` was set in Step 6, include it. Otherwise omit it entirely (don't include it commented out).
 
@@ -134,7 +134,7 @@ content_slug: "[project-slug]"   # FK to parent project
 ### Step 8: Confirm
 
 ```
-Hypothesis created: .lorf/hypotheses/h{NNN}-{slug}.md
+Hypothesis created: .lo/hypotheses/h{NNN}-{slug}.md
 
   ID: h{NNN}
   Statement: [statement]
