@@ -1,6 +1,6 @@
 ---
 name: backlog
-description: Manages the LORF project backlog in .lorf/BACKLOG.md. Supports viewing the backlog, adding tasks, adding features, and picking features to graduate into .lorf/work/ directories. Use when user says "backlog", "add task", "add feature", "what should I work on", "what's next", "start a feature", "/backlog", "/task", or "/feature".
+description: Manages the LORF project backlog in .lorf/BACKLOG.md. Supports viewing, adding, updating, and starting features and tasks. Use when user says "backlog", "add task", "add feature", "update backlog", "what should I work on", "what's next", "start a feature", "view backlog", "/backlog", "/task", or "/feature".
 ---
 
 # LORF Backlog Manager
@@ -25,11 +25,13 @@ Manages the project backlog at `.lorf/BACKLOG.md`. Features and tasks live here 
 
 ## Modes
 
-Detect mode from arguments. `/lo:backlog` with no args → view. `/lo:backlog task "fix X"` → add task. `/lo:backlog feature "auth"` → add feature. `/lo:backlog start "auth"` → start feature.
+Detect mode from arguments. `/lo:backlog` with no args → view. `/lo:backlog view` → view. `/lo:backlog task "fix X"` → add task. `/lo:backlog feature "auth"` → add feature. `/lo:backlog start "auth"` → start feature. `/lo:backlog update` → pick item to update. `/lo:backlog update "auth"` → update specific item.
 
 ### Mode 1: View Backlog
 
-No arguments. Read `.lorf/BACKLOG.md` and display a summary:
+Arguments: none, or `view`
+
+Read `.lorf/BACKLOG.md` and display a summary:
 
     Backlog (updated YYYY-MM-DD):
 
@@ -90,7 +92,37 @@ Graduates a feature from backlog to active work.
 
         No plans exist yet. Ready to brainstorm the design?
 
-### Mode 5: Complete Task
+### Mode 5: Update Item
+
+Arguments: `update` or `update "name"`
+
+Edit an existing feature or task in the backlog.
+
+**With no name:** List all features and tasks with numbers, ask user to pick one:
+
+    Which item do you want to update?
+
+    Features:
+      1. [backlog] Auth system
+      2. [active]  Dashboard redesign
+
+    Tasks:
+      3. [ ] Fix button color on settings page
+      4. [ ] Update dependency versions
+
+    Enter a number:
+
+**With a name:** Find the matching item (fuzzy match).
+
+Once an item is selected, ask what to change:
+- **Feature:** name, description, or status
+- **Task:** description, or mark done/undone
+
+Apply the edit, update `updated:` date, confirm:
+
+    Updated: "Auth system" — description changed
+
+### Mode 6: Complete Task
 
 When user says "done with X", "finished X", or checks off a task:
 
@@ -98,7 +130,7 @@ When user says "done with X", "finished X", or checks off a task:
 2. Update it: `- [x] ~~description~~ -> YYYY-MM-DD`
 3. Update `updated:` date
 
-### Mode 6: Complete Feature
+### Mode 7: Complete Feature
 
 When a feature is shipped (typically triggered by lo:ship, not invoked directly):
 
