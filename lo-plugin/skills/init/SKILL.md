@@ -22,7 +22,7 @@ Scaffolds the `.lorf/` directory convention in the current repository root.
 
 - NEVER overwrite an existing `.lorf/` directory. If one exists, warn the user and stop.
 - All files use plain Markdown with YAML frontmatter. No MDX.
-- `project.md` is the only file at the `.lorf/` root. Everything else goes in subdirectories.
+- `project.md` is the only content file created at init. `BACKLOG.md` is created by `/lo:backlog` on first use.
 - Use today's date (YYYY-MM-DD) for the initial stream entry.
 
 ## Workflow
@@ -209,24 +209,6 @@ title: "Project initialized"
 LORF project structure created. Project tracking begins.
 ```
 
-### Step 5b: Write BACKLOG.md
-
-Write `.lorf/BACKLOG.md` with the following content (substitute today's date for YYYY-MM-DD in the `updated` field):
-
-```markdown
----
-updated: YYYY-MM-DD
----
-
-## Features
-
-_No features yet. Use `/lo:backlog feature "name"` to add one._
-
-## Tasks
-
-- [ ] Review project.md and fill any TODO placeholders
-```
-
 ### Step 6: Write .gitkeep Files
 
 Write empty `.gitkeep` files in directories that start empty:
@@ -252,7 +234,6 @@ Show the user what was created and what was auto-detected:
     agents: [user selections]
     body: [auto-filled sections or TODOs]
 
-  BACKLOG.md
   hypotheses/
   stream/YYYY-MM-DD-project-started.md
   notes/
@@ -262,7 +243,7 @@ Show the user what was created and what was auto-detected:
 
 Next steps:
   1. Review .lorf/project.md — verify auto-filled content, fill any [TODO] placeholders
-  2. Use /lo:backlog to manage features and tasks
+  2. Use /lo:backlog to set up your backlog
   3. Use /lo:hypothesis to log your first hypothesis
   4. Use /lo:research to start a research doc
 ```
@@ -272,7 +253,6 @@ Next steps:
 ```
 .lorf/
 ├── project.md
-├── BACKLOG.md
 ├── hypotheses/
 ├── stream/
 ├── notes/
@@ -289,7 +269,6 @@ Before finishing, verify:
 - [ ] Stream entry has today's date in both filename and frontmatter
 - [ ] `.gitkeep` files in hypotheses/, notes/, research/, work/, solutions/
 - [ ] No files outside the expected structure
-- [ ] `.lorf/BACKLOG.md` exists with valid YAML frontmatter
 - [ ] `.lorf/work/` directory exists
 - [ ] `.lorf/solutions/` directory exists
 - [ ] `.lorf/work/.gitkeep` exists
