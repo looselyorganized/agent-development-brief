@@ -1,11 +1,11 @@
 ---
 name: solution
-description: Captures reusable knowledge in .lorf/solutions/ after completing work. Prompts for what was learned, what's reusable, and writes a structured solution file. Can be invoked standalone or triggered by lo:ship. Use when user says "capture solution", "what did I learn", "save this knowledge", "document solution", "/solution", or when prompted after shipping.
+description: Captures reusable knowledge in .lo/solutions/ after completing work. Prompts for what was learned, what's reusable, and writes a structured solution file. Can be invoked standalone or triggered by lo:ship. Use when user says "capture solution", "what did I learn", "save this knowledge", "document solution", "/solution", or when prompted after shipping.
 ---
 
-# LORF Solution Capture
+# LO Solution Capture
 
-Captures reusable knowledge in `.lorf/solutions/`. Solutions compound over time — future brainstorming and planning sessions search this directory before starting from scratch.
+Captures reusable knowledge in `.lo/solutions/`. Solutions compound over time — future brainstorming and planning sessions search this directory before starting from scratch.
 
 ## When to Use
 
@@ -16,20 +16,20 @@ Captures reusable knowledge in `.lorf/solutions/`. Solutions compound over time 
 
 ## Critical Rules
 
-- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
-- If `.lorf/solutions/` doesn't exist, create it.
-- Solutions are about **reusable knowledge**, not project-specific notes. If it's only relevant to this one instance, suggest `.lorf/notes/` instead.
+- `.lo/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
+- If `.lo/solutions/` doesn't exist, create it.
+- Solutions are about **reusable knowledge**, not project-specific notes. If it's only relevant to this one instance, suggest `.lo/notes/` instead.
 - Filename convention: `<topic-slug>.md` (kebab-case, 2-5 words)
 - If a solution file with the same slug exists, append a new dated section rather than overwriting.
 - All files are plain Markdown with YAML frontmatter. No MDX.
 
 ## Workflow
 
-### Step 1: Verify .lorf/ Exists
+### Step 1: Verify .lo/ Exists
 
-Check that `.lorf/solutions/` exists. If not, create it:
+Check that `.lo/solutions/` exists. If not, create it:
 ```
-mkdir -p .lorf/solutions
+mkdir -p .lo/solutions
 ```
 
 ### Step 2: Gather Context
@@ -50,13 +50,13 @@ Ask three questions (adapt phrasing to context):
 3. **When would you use this again?** — Under what conditions would future-you want to know this?
 
 If answers sound project-specific rather than reusable, gently redirect:
-"This sounds specific to [feature]. Would it be better as a note in .lorf/notes/? If there's a reusable pattern buried in here, let's extract just that part."
+"This sounds specific to [feature]. Would it be better as a note in .lo/notes/? If there's a reusable pattern buried in here, let's extract just that part."
 
 ### Step 4: Write the Solution
 
 Derive a topic slug from the problem/solution domain (not from the feature name).
 
-Write to `.lorf/solutions/<topic-slug>.md`:
+Write to `.lo/solutions/<topic-slug>.md`:
 
     ---
     date: YYYY-MM-DD
@@ -82,7 +82,7 @@ Tags: choose 2-4 from technical domain (caching, auth, database, api, testing, d
 
 ### Step 5: Confirm
 
-    Solution captured: .lorf/solutions/<topic-slug>.md
+    Solution captured: .lo/solutions/<topic-slug>.md
       Problem: [1-line summary]
       Tags: [tags]
       From: [source]

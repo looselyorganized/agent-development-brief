@@ -1,11 +1,11 @@
 {
   "name": "lo",
-  "description": "LORF work system — backlog, work execution, knowledge capture, and shipping pipeline for Loosely Organized projects",
+  "description": "LO work system — backlog, work execution, knowledge capture, and shipping pipeline for Loosely Organized projects",
   "version": "1.0.0",
   "author": {
     "name": "Loosely Organized Research Facility"
   },
   "repository": "https://github.com/looselyorganized/agent-development-brief",
   "license": "MIT",
-  "keywords": ["lorf", "work-management", "backlog", "skills"]
+  "keywords": ["lo", "work-management", "backlog", "skills"]
 }

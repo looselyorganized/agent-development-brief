@@ -1,6 +1,6 @@
 ---
 name: milestones
-description: Updates the .lorf/stream/ folder with milestone and update entries by grouping commits under thematic arcs. The stream is a curated editorial layer on top of git — not a restatement of commit messages. Reads existing stream entries first to avoid duplicates. Use when user says "update stream", "add milestone", "scan milestones", "catch up stream", "what happened since last milestone", "log progress", "update lorf", "sync stream", or "/lo:milestones". Also use proactively when significant work has been completed and the stream hasn't been updated recently.
+description: Updates the .lo/stream/ folder with milestone and update entries by grouping commits under thematic arcs. The stream is a curated editorial layer on top of git — not a restatement of commit messages. Reads existing stream entries first to avoid duplicates. Use when user says "update stream", "add milestone", "scan milestones", "catch up stream", "what happened since last milestone", "log progress", "update lo", "sync stream", or "/lo:milestones". Also use proactively when significant work has been completed and the stream hasn't been updated recently.
 metadata:
   version: 2.0.0
   author: LORF
@@ -8,24 +8,24 @@ metadata:
   tags: [lorf, milestones, stream, changelog, project-history]
 ---
 
-# LORF Milestone Stream Updater
+# LO Milestone Stream Updater
 
-Groups commits under thematic milestones to keep `.lorf/stream/` current. The stream is a **curated editorial layer on top of git** — milestones are editorial decisions about what matters, not paraphrases of what happened. Git stays the source of truth for details; the stream provides the narrative arc.
+Groups commits under thematic milestones to keep `.lo/stream/` current. The stream is a **curated editorial layer on top of git** — milestones are editorial decisions about what matters, not paraphrases of what happened. Git stays the source of truth for details; the stream provides the narrative arc.
 
 ## Core Principle
 
-**Don't restate commits. Group them.** A milestone like "lorf-open startup command" references the 12 commits that built it. Someone reading the stream gets the narrative without digging through git log. Each entry carries a `commits:` count linking it back to the underlying work.
+**Don't restate commits. Group them.** A milestone like "lo-open startup command" references the 12 commits that built it. Someone reading the stream gets the narrative without digging through git log. Each entry carries a `commits:` count linking it back to the underlying work.
 
 ## When to Use
 
 - User invokes `/lo:milestones`
 - User says "add milestone", "update stream", "catch up stream", "scan milestones"
-- Significant work has shipped and `.lorf/stream/` hasn't been updated
+- Significant work has shipped and `.lo/stream/` hasn't been updated
 - User wants to backfill stream entries from git history
 
 ## Critical Rules
 
-- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
+- `.lo/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
 - ALWAYS read existing stream entries before generating new ones — never create duplicates.
 - Filename convention: `YYYY-MM-DD-{slug}.md` — date must match frontmatter `date` field.
 - Multiple entries on the same date are fine — use distinct slugs.
@@ -35,17 +35,17 @@ Groups commits under thematic milestones to keep `.lorf/stream/` current. The st
 
 ## Workflow
 
-### Step 1: Verify .lorf/ Exists
+### Step 1: Verify .lo/ Exists
 
-Check that `.lorf/stream/` exists. If not:
+Check that `.lo/stream/` exists. If not:
 ```
-No .lorf/ directory found. Run /lo:new first to set up the project structure.
+No .lo/ directory found. Run /lo:new first to set up the project structure.
 ```
 Stop here.
 
 ### Step 2: Read Existing Stream
 
-Read every file in `.lorf/stream/` and build an index of what's already recorded:
+Read every file in `.lo/stream/` and build an index of what's already recorded:
 - Parse each file's frontmatter (`type`, `date`, `title`, `commits`)
 - Note the **most recent entry date** — this is the "last known" point in the timeline
 
@@ -108,7 +108,7 @@ Wait for user confirmation. The user can:
 
 ### Step 5: Write Files
 
-For each approved entry, write to `.lorf/stream/YYYY-MM-DD-{slug}.md`:
+For each approved entry, write to `.lo/stream/YYYY-MM-DD-{slug}.md`:
 
 ```markdown
 ---
@@ -141,7 +141,7 @@ Stream now has TOTAL entries, covering EARLIEST_DATE to LATEST_DATE.
 
 | Type | When to use | Examples |
 |------|------------|---------|
-| `milestone` | Significant deliverable or feature landing | "lorf-open startup command", "Supabase exporter launched", "Auth system complete" |
+| `milestone` | Significant deliverable or feature landing | "lo-open startup command", "Supabase exporter launched", "Auth system complete" |
 | `update` | Incremental improvement, hardening, config change | "Exporter hardening and type safety", "Performance fixes", "Dependency upgrades" |
 | `note` | Observation, investigation, or decision worth recording | "Evaluated Redis vs Memcached", "Noticed latency spike under load" |
 
@@ -161,7 +161,7 @@ Stream entries are editorial, not mechanical:
 
 **Good:**
 ```
-Replaced the naive facility switch with a comprehensive startup command running 8 sequential preflight checks. Self-heals launchd and exporter if needed. Matching lorf-close performs graceful shutdown.
+Replaced the naive facility switch with a comprehensive startup command running 8 sequential preflight checks. Self-heals launchd and exporter if needed. Matching lo-close performs graceful shutdown.
 ```
 
 **Bad:**

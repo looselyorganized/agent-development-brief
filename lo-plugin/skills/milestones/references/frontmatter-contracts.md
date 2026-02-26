@@ -1,8 +1,8 @@
 # Stream Entry Frontmatter Contract
 
-> From the .lorf/ Convention Spec v0.1.0
+> From the .lo/ Convention Spec v0.1.0
 
-Stream entries are chronological records in `.lorf/stream/`. Filename convention: `YYYY-MM-DD-{slug}.md`.
+Stream entries are chronological records in `.lo/stream/`. Filename convention: `YYYY-MM-DD-{slug}.md`.
 
 ## Required Fields
 

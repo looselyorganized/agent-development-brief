@@ -1,6 +1,6 @@
 # Research Document Frontmatter Contract
 
-> From the .lorf/ Convention Spec v2.0.0
+> From the .lo/ Convention Spec v2.0.0
 > Updated 2026-02-23 — research articles are project-scoped, no standalone /research route.
 
 ## Filename Convention
@@ -49,6 +49,6 @@ published → draft (pull back for revisions)
 
 ## Where Research Lives
 
-Research articles are project-scoped. They live in `.lorf/research/` within their parent project's repo and are accessed through the project's detail page on the website. There is no standalone `/research` route.
+Research articles are project-scoped. They live in `.lo/research/` within their parent project's repo and are accessed through the project's detail page on the website. There is no standalone `/research` route.
 
 When synced to Supabase via the webhook pipeline, research docs land in the `research_docs` table with a foreign key (`content_slug`) linking them to their parent project.

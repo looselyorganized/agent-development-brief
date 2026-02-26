@@ -1,21 +1,21 @@
 ---
 name: work
-description: Executes plans from .lorf/work/ directories. Creates branches or worktrees for isolation, identifies parallelizable tasks, and dispatches work using direct execution, subagents, or Agent Teams (preview feature). Stops when plan is complete — does not ship. Use when user says "start working", "let's build", "execute the plan", "work on", or "/work".
+description: Executes plans from .lo/work/ directories. Creates branches or worktrees for isolation, identifies parallelizable tasks, and dispatches work using direct execution, subagents, or Agent Teams (preview feature). Stops when plan is complete — does not ship. Use when user says "start working", "let's build", "execute the plan", "work on", or "/work".
 ---
 
-# LORF Work Executor
+# LO Work Executor
 
-Executes plans from `.lorf/work/` feature directories. Handles branching, parallelization, and progress tracking. Stops when the plan is complete — shipping is a separate step (`/lo:ship`).
+Executes plans from `.lo/work/` feature directories. Handles branching, parallelization, and progress tracking. Stops when the plan is complete — shipping is a separate step (`/lo:ship`).
 
 ## When to Use
 
 - User invokes `/lo:work`
 - User says "start working", "let's build", "execute the plan"
-- A feature has been picked from the backlog and plans exist in `.lorf/work/`
+- A feature has been picked from the backlog and plans exist in `.lo/work/`
 
 ## Critical Rules
 
-- `.lorf/work/` MUST exist. If it doesn't, tell the user to run `/lo:new` first.
+- `.lo/work/` MUST exist. If it doesn't, tell the user to run `/lo:new` first.
 - NEVER ship code. This skill executes plans. `/lo:ship` handles the quality pipeline.
 - ALWAYS create a branch or worktree before making changes. Never work directly on main.
 - Be transparent about what's running in parallel and why.
@@ -26,7 +26,7 @@ Executes plans from `.lorf/work/` feature directories. Handles branching, parall
 
 ### Step 1: Find Active Work
 
-Scan `.lorf/work/` for feature directories containing plan files (numbered: `001-*.md`, `002-*.md`).
+Scan `.lo/work/` for feature directories containing plan files (numbered: `001-*.md`, `002-*.md`).
 
 **If no work directories exist:**
 Tell user to use `/lo:backlog pick "feature"` to graduate a feature.
@@ -112,7 +112,7 @@ Do NOT automatically proceed to shipping.
 
 ## Plan File Format
 
-Plans in `.lorf/work/` follow the executing-plans skill format:
+Plans in `.lo/work/` follow the executing-plans skill format:
 
     ---
     status: pending

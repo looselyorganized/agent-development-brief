@@ -1,9 +1,9 @@
-# LORF Frontmatter Contracts
+# LO Frontmatter Contracts
 
-> From the .lorf/ Convention Spec v2.0.0
+> From the .lo/ Convention Spec v2.0.0
 > Updated 2026-02-23 — lifecycle phases changed to explore/build/open/closed.
 
-All `.lorf/` files use Markdown with YAML frontmatter (parsed by gray-matter). No MDX — content is plain Markdown.
+All `.lo/` files use Markdown with YAML frontmatter (parsed by gray-matter). No MDX — content is plain Markdown.
 
 ---
 

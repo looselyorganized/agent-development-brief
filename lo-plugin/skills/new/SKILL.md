@@ -3,9 +3,9 @@ name: new
 description: Scaffolds the .lo/ directory structure for a new LO project. Creates PROJECT.md with full frontmatter template, subdirectories (hypotheses, stream, notes, research, work, solutions), .gitkeep files, and an initial "project started" stream entry. Use when user says "new lo", "create lo", "set up lo", "scaffold lo", "new lo project", "add lo to this repo", "new project", or "/lo:new".
 metadata:
   version: 2.0.0
-  author: LO
+  author: LORF
   category: project-scaffolding
-  tags: [lo, project-setup, scaffolding, convention]
+  tags: [lorf, project-setup, scaffolding, convention]
 ---
 
 # LO New Project

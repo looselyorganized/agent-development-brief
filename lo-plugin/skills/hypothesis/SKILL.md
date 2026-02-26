@@ -3,9 +3,9 @@ name: hypothesis
 description: Generates a properly formatted LO hypothesis file with correct frontmatter and writes it to .lo/hypotheses/. Takes file(s) as input (notes, code, research) and walks the user through distilling a testable hypothesis statement. Use when user says "new hypothesis", "add hypothesis", "create hypothesis", "log a hypothesis", "test this idea", or "/lo:hypothesis".
 metadata:
   version: 1.0.0
-  author: LO
+  author: LORF
   category: project-documentation
-  tags: [lo, hypothesis, research, scientific-method]
+  tags: [lorf, hypothesis, research, scientific-method]
 ---
 
 # LO Hypothesis Generator

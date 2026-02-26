@@ -3,7 +3,7 @@ name: ship
 description: Quality pipeline for shipping completed work. Runs tests, code-simplifier, security review, then commits, pushes, and creates a PR. Creates a stream milestone and prompts for solution capture. Stops and reports if any gate fails. Use when user says "ship it", "ready to merge", "ship this", "push and PR", "/ship", or when work execution is complete.
 ---
 
-# LORF Ship Pipeline
+# LO Ship Pipeline
 
 Runs the quality pipeline to ship completed work. Each gate must pass before proceeding. Stops and reports if any gate fails.
 
@@ -27,7 +27,7 @@ Runs the quality pipeline to ship completed work. Each gate must pass before pro
 
 1. **Not on main/master:** Check `git branch --show-current`. If on main/master, stop.
 2. **Working tree status:** Check `git status`. If uncommitted changes, ask whether to include or stash.
-3. **Identify the feature:** Map branch name to `.lorf/work/` directory or BACKLOG.md entry. If unclear, ask.
+3. **Identify the feature:** Map branch name to `.lo/work/` directory or BACKLOG.md entry. If unclear, ask.
 
 ### Gate 2: Run Tests
 
@@ -75,13 +75,13 @@ If push fails, stop and report.
 Create PR with:
 - Title derived from feature name
 - Body summarizing what was built and why
-- Reference to plan in `.lorf/work/` if applicable
+- Reference to plan in `.lo/work/` if applicable
 
 Report the PR URL.
 
 ### Gate 8: Stream Milestone
 
-Write to `.lorf/stream/YYYY-MM-DD-<feature-slug>.md`:
+Write to `.lo/stream/YYYY-MM-DD-<feature-slug>.md`:
 
     ---
     type: "milestone"
@@ -105,7 +105,7 @@ Count commits: `git rev-list --count main..HEAD`
     Feature shipped!
 
     PR: [url]
-    Stream: .lorf/stream/YYYY-MM-DD-<slug>.md
+    Stream: .lo/stream/YYYY-MM-DD-<slug>.md
     Backlog: updated
 
     Anything reusable worth capturing?
@@ -122,7 +122,7 @@ After completion:
       Commit:   <hash> "<message>"
       Push:     origin/<branch>
       PR:       <url>
-      Stream:   .lorf/stream/YYYY-MM-DD-<slug>.md
+      Stream:   .lo/stream/YYYY-MM-DD-<slug>.md
       Backlog:  <feature> -> done
       Solution: [captured | skipped]
 

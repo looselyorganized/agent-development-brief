@@ -1,6 +1,6 @@
 ---
 name: research
-description: Generates a structured LORF research article with proper frontmatter, editorial headings, narrative prose, and image placement notes. Takes file(s) as input and walks the user through creating a research document following the Loosely Organized editorial style. Use when user says "write research", "create research article", "draft research", "new research doc", "write up findings", or "/lo:research".
+description: Generates a structured LO research article with proper frontmatter, editorial headings, narrative prose, and image placement notes. Takes file(s) as input and walks the user through creating a research document following the Loosely Organized editorial style. Use when user says "write research", "create research article", "draft research", "new research doc", "write up findings", or "/lo:research".
 metadata:
   version: 2.0.0
   author: LORF
@@ -8,9 +8,9 @@ metadata:
   tags: [lorf, research, writing, editorial, documentation]
 ---
 
-# LORF Research Article Generator
+# LO Research Article Generator
 
-Walks the user through creating a structured research article for `.lorf/research/`.
+Walks the user through creating a structured research article for `.lo/research/`.
 
 ## When to Use
 
@@ -20,10 +20,10 @@ Walks the user through creating a structured research article for `.lorf/researc
 
 ## Critical Rules
 
-- `.lorf/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
+- `.lo/` directory MUST exist. If it doesn't, tell the user to run `/lo:new` first.
 - All files are plain Markdown with YAML frontmatter. No MDX.
 - Filename convention: `{slug}.md` (kebab-case, descriptive)
-- Research articles in `.lorf/research/` are project-scoped. They are accessed through the parent project's page — there is no standalone `/research` route on the website.
+- Research articles in `.lo/research/` are project-scoped. They are accessed through the parent project's page — there is no standalone `/research` route on the website.
 - Default status is `draft`. Only the user can promote to `review` or `published`.
 
 ## Editorial Style
@@ -79,11 +79,11 @@ Image placement guidelines:
 
 ## Workflow
 
-### Step 1: Verify .lorf/ Exists
+### Step 1: Verify .lo/ Exists
 
-Check that `.lorf/research/` exists. If not:
+Check that `.lo/research/` exists. If not:
 ```
-No .lorf/ directory found. Run /lo:new first to set up the project structure.
+No .lo/ directory found. Run /lo:new first to set up the project structure.
 ```
 Stop here.
 
@@ -138,7 +138,7 @@ Wait for user confirmation before writing.
 
 ### Step 5: Generate the Article
 
-Write to `.lorf/research/{slug}.md`:
+Write to `.lo/research/{slug}.md`:
 
 ```markdown
 ---
@@ -163,7 +163,7 @@ Guidelines for generation:
 ### Step 6: Confirm
 
 ```
-Research article created: .lorf/research/{slug}.md
+Research article created: .lo/research/{slug}.md
 
   Title: [title]
   Topics: [topics]
