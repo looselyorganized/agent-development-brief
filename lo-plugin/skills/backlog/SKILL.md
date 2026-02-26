@@ -1,6 +1,6 @@
 ---
 name: backlog
-description: Manages the LORF project backlog in .lorf/BACKLOG.md. Supports viewing the backlog, adding tasks, adding features, and picking features to graduate into .lorf/work/ directories. Use when user says "backlog", "add task", "add feature", "what should I work on", "what's next", "pick a feature", "/backlog", "/task", or "/feature".
+description: Manages the LORF project backlog in .lorf/BACKLOG.md. Supports viewing the backlog, adding tasks, adding features, and picking features to graduate into .lorf/work/ directories. Use when user says "backlog", "add task", "add feature", "what should I work on", "what's next", "start a feature", "/backlog", "/task", or "/feature".
 ---
 
 # LORF Backlog Manager
@@ -25,7 +25,7 @@ Manages the project backlog at `.lorf/BACKLOG.md`. Features and tasks live here 
 
 ## Modes
 
-Detect mode from arguments. `/lo:backlog` with no args → view. `/lo:backlog task "fix X"` → add task. `/lo:backlog feature "auth"` → add feature. `/lo:backlog pick "auth"` → pick feature.
+Detect mode from arguments. `/lo:backlog` with no args → view. `/lo:backlog task "fix X"` → add task. `/lo:backlog feature "auth"` → add feature. `/lo:backlog start "auth"` → start feature.
 
 ### Mode 1: View Backlog
 
@@ -70,22 +70,22 @@ Arguments: `feature "name"`
 4. Update `updated:` date
 5. Confirm: `Feature added: "Feature Name" (status: backlog)`
 
-### Mode 4: Pick Feature
+### Mode 4: Start Feature
 
-Arguments: `pick "name"`
+Arguments: `start "name"`
 
 Graduates a feature from backlog to active work.
 
 1. Read current BACKLOG.md
 2. Find the matching feature (fuzzy match on name)
-3. If not found, show available backlog features and ask user to pick
+3. If not found, show available backlog features and ask user to choose
 4. Derive directory name: kebab-case from feature name
 5. Create `.lorf/work/<feature-name>/` directory
 6. Update the feature's status line: `Status: active -> .lorf/work/<feature-name>/`
 7. Update `updated:` date
 8. Confirm and bridge:
 
-        Feature picked: "<name>"
+        Feature started: "<name>"
         Work directory: .lorf/work/<feature-name>/
 
         No plans exist yet. Ready to brainstorm the design?
