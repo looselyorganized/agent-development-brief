@@ -17,7 +17,7 @@ Executes plans from `.lo/work/` feature directories. Handles branching, parallel
 
 - `.lo/work/` MUST exist. If it doesn't, tell the user to run `/lo:new` first.
 - NEVER ship code. This skill executes plans. `/lo:ship` handles the quality pipeline.
-- ALWAYS create a branch or worktree before making changes. Never work directly on main.
+- ALWAYS ask the user about branch isolation before executing. Do not skip this step.
 - Be transparent about what's running in parallel and why.
 - Stop and report when a plan phase is complete. Ask before proceeding to the next phase.
 - If no plans exist in the work directory, bridge to brainstorming and plan-writing first.
@@ -58,19 +58,29 @@ Wait for user confirmation before executing.
 
 ### Step 3: Set Up Isolation
 
-Choose isolation based on scope:
+**Before executing anything, ask the user:**
 
-**Worktree** (for features with multiple phases):
-```
-git worktree add ../<repo-name>-<feature-name> -b feature/<feature-name>
-```
+    You're on <current-branch>. Want to create a new branch for this work?
 
-**Branch** (for single-phase, smaller scope):
+    1. New branch: feature/<feature-name>
+    2. New worktree: ../<repo-name>-<feature-name>
+    3. Stay on <current-branch>
+
+    Which option?
+
+**Do not proceed to Step 4 until the user answers.**
+
+If they choose a branch:
 ```
 git checkout -b feature/<feature-name>
 ```
 
-If unsure, ask the user.
+If they choose a worktree:
+```
+git worktree add ../<repo-name>-<feature-name> -b feature/<feature-name>
+```
+
+If they choose to stay on the current branch, proceed — but note this in the plan summary so `/lo:ship` knows there's no feature branch to PR from.
 
 ### Step 4: Execute
 
