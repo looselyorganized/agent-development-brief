@@ -8,12 +8,30 @@ topics:
   - developer-tooling
   - documentation
 repo: "https://github.com/looselyorganized/agent-development-brief"
+infrastructure:
+  - GitHub
 agents:
   - name: "claude-code"
     role: "AI coding agent (Claude Code)"
 ---
 
 Agent Development Briefs replace traditional Product Requirements Documents with a collaborative framework designed for AI-human development teams. Instead of predicting everything upfront, ADBs define the problem space and let implementation drive specification refinement.
+
+## Capabilities
+
+- **Brief Authoring** — Template-driven core documents with fill-in-the-blank scaffolding
+- **Decision Authority Framework** — Standardized authority levels (Human-Decides, Agent-Proposes, Agent-Decides, Collaborative) configurable per decision type
+- **Living Documentation** — Documents evolve through implementation; decision-log maintained in real-time by agents
+- **Example Projects** — Reference ADB implementation (CatGram) demonstrating the full document set
+- **Agent Onboarding Workflow** — Ordered document review sequence culminating in agent-generated implementation plan
+
+## Architecture
+
+Pure documentation framework — no runtime, no build, no dependencies. Markdown templates consumed directly by AI coding agents. Archive holds canonical templates; examples hold filled-out references. Agents read documents in prescribed order, ask clarifying questions, then generate an implementation plan.
+
+## Infrastructure
+
+- **GitHub** — Source hosting, version control, and distribution
 
 ## Core Documents
 
