@@ -2,7 +2,7 @@
 title: "Agent Development Brief"
 description: "A collaborative framework replacing traditional PRDs for AI-human development teams — minimal upfront spec, living documentation, outcome-focused."
 status: "open"
-classification: "public"
+state: "public"
 topics:
   - agent-collaboration
   - developer-tooling
