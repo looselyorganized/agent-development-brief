@@ -10,5 +10,4 @@ Status: done -> 2026-02-25
 
 ## Tasks
 
-- [ ] t001 Review PROJECT.md and fill any TODO placeholders
-- [ ] t002 Update README.md to reflect LO work system
+_No open tasks. Use `/lo:backlog task "description"` to add one._
