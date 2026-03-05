@@ -1,4 +1,5 @@
 ---
+proj_id: "proj_e62f7efd-d423-4b19-8416-6cb0c9138efa"
 title: "Agent Development Brief"
 description: "A collaborative framework replacing traditional PRDs for AI-human development teams — minimal upfront spec, living documentation, outcome-focused."
 status: "open"
