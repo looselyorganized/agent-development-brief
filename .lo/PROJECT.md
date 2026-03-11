@@ -1,13 +1,9 @@
 ---
-proj_id: "proj_e62f7efd-d423-4b19-8416-6cb0c9138efa"
+id: "proj_e62f7efd-d423-4b19-8416-6cb0c9138efa"
 title: "Agent Development Brief"
 description: "A collaborative framework replacing traditional PRDs for AI-human development teams — minimal upfront spec, living documentation, outcome-focused."
-status: "open"
+status: "closed"
 state: "public"
-topics:
-  - agent-collaboration
-  - developer-tooling
-  - documentation
 repo: "https://github.com/looselyorganized/agent-development-brief"
 infrastructure:
   - GitHub
